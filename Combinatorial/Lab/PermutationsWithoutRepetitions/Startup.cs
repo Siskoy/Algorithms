@@ -19,17 +19,13 @@ void Permute(int index)
     }
     else
     {
-        HashSet<char> swapped = new();
+        Permute(index + 1);
 
-        for (int i = index; i < elements.Length; i++)
+        for (int i = index + 1; i < elements.Length; i++)
         {
-            if (swapped.Contains(elements[i])) continue;
-
             Swap(index, i);
             Permute(index + 1);
             Swap(index, i);
-
-            swapped.Add(elements[i]);
         }
     }
 }
