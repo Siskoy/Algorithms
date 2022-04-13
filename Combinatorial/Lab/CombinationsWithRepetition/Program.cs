@@ -21,7 +21,7 @@ void Combine(int index, int start)
         for (int i = start; i < elements.Length; i++)
         {
             combinations[index] = elements[i];
-            Combine(index + 1, i + 1);
+            Combine(index + 1, i);
         }
     }
 }
